@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<script src="js/jquery-1.12.1.min.js"></script>
+
+<table border="1px">
+<tr>
+<td>
+<table width="100%"><tr><td width="50%"><h3>Upload</h3></td><td><img id="loader_upload" src="css/images/loading@2x.gif" width="20px" height="20px"></td></tr></table>
+</td>
+<td>
+<table width="100%"><tr><td width="50%"><h3>Compute</h3></td><td><img id="loader_compute" src="css/images/loading@2x.gif" width="20px" height="20px"></td></tr></table>
+</td>
+<td>
+<h3>Result</h3>
+</td>
+</tr>
+<tr>
+<td width="30%">
+	<form id="uploadForm">
+	<table>
+	<tr><td>
+	<input name="datafile" type="file" />
+	</td>
+	</tr>
+	<tr><td>
+	API Key: 
+	<input name="api_key" type="text" />
+	</td><td>
+	<input type="submit" value="Submit" />
+	</td></tr>
+	</table>
+	</form>
+</td>
+<td>
+	<table width="100%">
+	<tr>
+	<td><label>Task ID:</label></td>
+	<td width="70%"><span id="taskID"></span></td>
+	</tr>
+	</table>
+</td>
+<td width="30%">
+<span id="result">No result</span>
+</td>
+</tr>
+</table>
+
+
+
+
+<script src="js/script.js"></script>
+</body> 
+</html>
