@@ -18,10 +18,20 @@ Clients for the Manifold 3D API web service.
 
 1. POST the computation job:  
 
-  api_key=<your-api-key>  
+  data_file=your-model-file-path  
+  api_key=your-api-key  
   base_url=http://manifold.metamatic.us/v1/compute/  
 
   curl -X POST \  
     -F "api_key=$api_key" \  
-    -F "datafile=@$1" --url $base_url  
+    -F "datafile=@$data_file" --url $base_url  
   echo  
+
+2. GET the computation results:  
+
+  task_id=your-task-id  
+  base_url=http://manifold.metamatic.us/v1/compute/  
+  
+  curl -X GET --url "$base_url?task_id=$task_id"  
+
+
