@@ -18,10 +18,10 @@ Clients for the Manifold 3D API web service.
 
 1. POST the computation job:  
 
-` api_key=<your-api-key>  
+  api_key=<your-api-key>  
   base_url=http://manifold.metamatic.us/v1/compute/  
 
   curl -X POST \  
     -F "api_key=$api_key" \  
     -F "datafile=@$1" --url $base_url  
-  echo`  
+  echo  
