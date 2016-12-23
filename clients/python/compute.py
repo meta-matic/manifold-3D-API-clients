@@ -33,6 +33,9 @@ def get(task_id):
 
 
 if __name__=='__main__':
+	import sys
+	api_key = sys.argv[1]
+	data_file = sys.argv[2]
 	task_id = post()
 	results = get(task_id)
 	pprint.pprint(results)
