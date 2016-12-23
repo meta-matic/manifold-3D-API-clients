@@ -4,7 +4,7 @@ Clients for the Manifold 3D API web-service. Calculates the following values for
 * Bounding box
 * Surface area
 * Facet count
-* Build time estimate
+* Build time estimate  
 Manifold web-service also renders 3D models to images.
 
 
@@ -43,7 +43,7 @@ Manifold web-service also renders 3D models to images.
   curl -X GET --url "$base_url?task_id=$task_id"  
 
 3. Example response:
-  `{
+  ```{
     "facet_count": {
       "UOM": "#",
       "value": 796
@@ -75,10 +75,4 @@ Manifold web-service also renders 3D models to images.
       "UOM": "mm3",
       "value": 4049.5959240246193
     }
-  }`
-
-
-
-
-
-
+  }```
