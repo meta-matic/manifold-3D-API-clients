@@ -40,8 +40,12 @@ $(document).ready(function (e) {
 					poller_id = setInterval(get_result, 5000);
 				}
 			}else{	
+				data['root_url'] = 'http://manifold.metamatic.us/';
 				console.log(data);
-				$("#result").html("Volume: " + Math.ceil(data.volume.value) + " " + data.volume.UOM);
+				var source   = $("#entry-template").html();
+				var template = Handlebars.compile(source);
+				var html = template(data);
+				$("#entry-rendered").html(html);
 				$("#loader_compute").hide();
 				console.log("OK");
 				if(poller_id != null){

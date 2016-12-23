@@ -1,11 +1,19 @@
 # manifold-3D-API-clients
-Clients for the Manifold 3D API web service.
+Clients for the Manifold 3D API web-service. Calculates the following values for a 3D model:
+* Volume
+* Bounding box
+* Surface area
+* Facet count
+* Build time estimate
+Manifold web-service also renders 3D models to images.
+
 
 #### Example implementations for these languages:  
 * JS / HTML
 * PHP
 * Python
 * cURL
+
 
 #### Intended usage:  
 1. Obtain an api_key  
@@ -33,5 +41,44 @@ Clients for the Manifold 3D API web service.
   base_url=http://manifold.metamatic.us/v1/compute/  
   
   curl -X GET --url "$base_url?task_id=$task_id"  
+
+3. Example response:
+  `{
+    "facet_count": {
+      "UOM": "#",
+      "value": 796
+    },
+    "bbox": {
+      "UOM": "mm",
+      "value": {
+        "height": 9.0,
+        "length": 82.85900115966797,
+        "width": 62.0
+      }
+    },
+    "image": {
+      "value": "/media/manifold/render/d265d6f9-5e02-4ae5-853b-46e8ab20ebc8.png"
+    },
+    "error": null,
+    "time": {
+      "UOM": "s",
+      "value": {
+        "min": 168.7331635010258,
+        "max": 506.1994905030774
+      }
+    },
+    "area": {
+      "UOM": "mm2",
+      "value": 4679.713492961474
+    },
+    "volume": {
+      "UOM": "mm3",
+      "value": 4049.5959240246193
+    }
+  }`
+
+
+
+
 
 

@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 </head>
 <body>
-<script src="js/jquery-1.12.1.min.js"></script>
 
 <table border="1px">
 <tr>
@@ -39,19 +38,27 @@
 	<table width="100%">
 	<tr>
 	<td><label>Task ID:</label></td>
-	<td width="70%"><span id="taskID"></span></td>
+	<td width="60%"><span id="taskID"></span></td>
 	</tr>
 	</table>
 </td>
-<td width="30%">
-<span id="result">No result</span>
+<td width="40%">
+	<span id="result">No result</span>
+	<script id="entry-template" type="text/x-handlebars-template">
+	  <div class="entry"><em>Volume:</em> {{ volume.value }} {{ volume.UOM }}</div>
+	  <div class="entry"><em>Bounding box:</em> {{ bbox.value.length }}, {{ bbox.value.width }}, {{ bbox.value.height }}, {{ bbox.UOM }}</div>
+	  <div class="entry"><em>Facets:</em> {{ facet_count.value }}</div>
+	  <div class="entry"><em>Build time:</em> {{ time.value.min }} - {{ time.value.max }} {{ time.UOM }}</div>
+	  <div class="entry"><em>Image:</em> <img src="{{ root_url }}{{ image.value }}"></div>
+	</script>
+	<div id="entry-rendered"></div>
 </td>
 </tr>
 </table>
 
 
-
-
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
 <script src="js/script.js"></script>
 </body> 
 </html>
