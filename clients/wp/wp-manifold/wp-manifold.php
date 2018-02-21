@@ -38,8 +38,7 @@ function ManifoldShortcode() {
 				</td>
 				</tr>
 				<tr><td>
-				API Key: 
-				<input name="api_key" type="text" />
+				<input name="api_key" type="hidden" value="' . get_option('manifold_api_key') . '" />
 				</td><td>
 				<input type="submit" value="Submit" />
 				</td></tr>
@@ -77,4 +76,45 @@ function Manifold_widget_enqueue_script() {
 }
 add_action('wp_enqueue_scripts', 'Manifold_widget_enqueue_script');
 
+
+// Settings
+function manifold_register_settings() {
+   add_option( 'manifold_api_key', 'Enter API Key');
+   register_setting( 'manifold_options_group', 'manifold_api_key', 'manifold_callback' );
+}
+add_action( 'admin_init', 'manifold_register_settings' );
+
+function manifold_register_options_page() {
+  add_options_page('Manifold Settings', 'Manifold 3D API', 'manage_options', 'manifold', 'manifold_options_page');
+}
+add_action('admin_menu', 'manifold_register_options_page');
+
+
+
+// Settings
+
+function manifold_options_page()
+
+{
+
+?>
+		<div>
+		<?php screen_icon(); ?>
+		<h2>Manifold 3D API</h2>
+		<form method="post" action="options.php">
+		<?php settings_fields( 'manifold_options_group' ); ?>
+
+		<h3>Settings</h3>
+		<p>Set your API key.</p>
+		<table>
+		<tr valign="top">
+		<th scope="row"><label for="manifold_api_key">API Key</label></th>
+		<td><input type="text" id="manifold_api_key" name="manifold_api_key" value="<?php echo get_option('manifold_api_key'); ?>" /></td>
+		</tr>
+		</table>
+		<?php  submit_button(); ?>
+		</form>
+		</div>
+<?php
+}
 ?>
