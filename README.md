@@ -1,4 +1,4 @@
-### NEW! Includes a free WordPress Plugin client implmentation!
+### NEW! Includes a free WordPress Plugin client implementation!
 
 # manifold-3D-API-clients
 Clients for the Manifold 3D API web-service. Calculates the following values for a 3D model:
