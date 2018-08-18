@@ -24,10 +24,11 @@ def get(task_id):
 	print(r.url)
 	print("Waiting for computation to finish ...")
 	while True:
-		if r.content != '':
+		if len(r.content) > 0:
+			print(r.content)
 			break
 		print("Waiting ...")
-		print(response.url)
+		print(r.url)
 		r = requests.get(url=base_url, params=params)
 	return r.json()
 
