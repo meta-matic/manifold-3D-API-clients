@@ -100,7 +100,7 @@ $(document).ready(function (e) {
 				var source   = $("#entry-template").html();
 				var template = Handlebars.compile(source);
 				var html = template(data);
-				get_and_render_3D_sequence(base_url + data.seq);
+				get_and_render_3D_sequence(data.seq);
 				$("#entry-rendered").html(html);
 				$("#loader_compute").hide();
 				console.log("OK");
