@@ -78,7 +78,7 @@ add_shortcode('manifold', 'ManifoldShortcode');
 
 
 function Manifold_widget_enqueue_script() {   
-    wp_enqueue_script( 'handlebars', plugin_dir_url( __FILE__ ) . 'js/handlebars-v4.0.5.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'handlebars', plugin_dir_url( __FILE__ ) . 'js/handlebars.min-v4.7.7.js', array('jquery'), '1.0', true );
     wp_enqueue_script( 'script', plugin_dir_url( __FILE__ ) . 'js/script.js', array('jquery'), '1.0', true );
 }
 add_action('wp_enqueue_scripts', 'Manifold_widget_enqueue_script');
